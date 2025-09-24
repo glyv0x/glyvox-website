@@ -1,0 +1,55 @@
+* {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100dvh;
+  animation: float 3s ease-in-out infinite;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  padding-top: 4px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  margin: auto 0;
+  font-weight: bold;
+}
+
+p {
+  text-align: center;
+  margin: 20px 0;
+  line-height: 1.6;
+  word-break: break-all;
+  overflow-wrap: anywhere;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}

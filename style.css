@@ -1,0 +1,163 @@
+* {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  a:hover {
+    opacity: 0.7;
+  }
+
+  h1:hover {
+    opacity: 0.7;
+  }
+
+  img:hover {
+    opacity: 0.7;
+  }
+
+  .group-items a:hover {
+    opacity: 0.7;
+  }
+}
+
+/* Active states for all clickable elements */
+a:active,
+h1:active,
+img:active,
+.group-items a:active,
+a.pressed,
+h1.pressed,
+img.pressed,
+.group-items a.pressed {
+  opacity: 0.5 !important;
+  transition: opacity 0s;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+  min-height: 100dvh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  padding-top: 4px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  margin: auto 0;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+h1 {
+  cursor: pointer;
+  padding: 16px;
+  margin-top: 0;
+  margin-bottom: 16px;
+  transition: opacity 0.3s ease;
+}
+
+img {
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 20px;
+  padding-bottom: 6px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  line-height: 40px;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  justify-content: center;
+}
+
+.group {
+  min-width: 160px;
+  text-align: center;
+  position: relative;
+  padding: 0 32px;
+}
+
+.group:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  background: rgba(255, 255, 255, 0.2);
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -16px;
+  height: 1px;
+  width: 158px;
+}
+
+.group-title {
+  opacity: 0.5;
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 8px;
+}
+
+.group-items {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  justify-content: center;
+}
+
+@media (min-width: 940px) {
+  h1 {
+    margin-bottom: 32px;
+  }
+  
+  ul {
+    flex-direction: row;
+    gap: 0;
+  }
+
+  .group-items {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .group:not(:last-child)::after {
+    left: auto;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    height: 100%;
+    width: 1px;
+  }
+}
